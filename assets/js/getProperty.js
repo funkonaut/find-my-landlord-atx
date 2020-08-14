@@ -145,11 +145,11 @@ function renderSelectedMarker(feature) {
 	markerContainer = document.createElement("object");
 	markerContainer.id = "marker";
 	// Add SVG to marker
-	markerContainer.setAttribute("data", "/assets/images/marker.svg");
+	markerContainer.setAttribute("data", "assets/images/marker.svg");
 	// After loaded, change style
 	markerContainer.addEventListener("load",function() {
-	var svg = markerContainer.contentDocument;
-       	svg.getElementById("outline").setAttribute("stroke", black);
+	        var svg = markerContainer.contentDocument;
+       	        svg.getElementById("outline").setAttribute("stroke", black);
 		svg.getElementById("shape").setAttribute("fill", dsaYellow);
 	}, false);
 	
