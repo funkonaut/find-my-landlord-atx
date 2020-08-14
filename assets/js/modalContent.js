@@ -1,0 +1,5 @@
+var dataInfoContent = `<h5>Note: properties may have changed ownership since the data was initially collected. There may also be some inaccuracies due to the large size of the dataset – to flag an issue, please <a href="mailto:tenantscdsa@gmail.com">email us</a>.</h5>
+
+<p>The <b>property taxpayer</b> and address for buildings in Cook County were <b>scraped</b> from the <a href="https://www.cookcountyassessor.com/address-search">assessor website</a> in November 2019, and filtered to exclude properties not zoned for rental. Properties were matched based on the name and address of the property taxpayer, to find the <b>number of buildings</b> sharing the same taxpayer.</p>
+
+<p>For owners affiliated with at least 5 properties, matches were researched and <b>affiliated</b> with particular corporations, managers, or landlords based on information in the <a href="https://www.ilsos.gov/corporatellc/CorporateLlcController">Illinois Secretary of State LLC Search</a> and other public records, including the <a href="https://cookrecorder.com/search-our-records/">Cook County Recorder of Deeds</a>.</p>`
