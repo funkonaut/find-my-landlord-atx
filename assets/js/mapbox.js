@@ -59,7 +59,7 @@ map.on("load", function() {
 			map.addSource("propertyData", {
 				type: "vector",
 				maxzoom: 14, // Allows overzoom
-			        url: "mapbox://crcorrell.5tjw747",	
+			        url: "mapbox://crcorrell.5tjw7473",	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
