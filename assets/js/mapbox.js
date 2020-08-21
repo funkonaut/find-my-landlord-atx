@@ -59,7 +59,7 @@ map.on("load", function() {
 			map.addSource("propertyData", {
 				type: "vector",
 				maxzoom: 14, // Allows overzoom
-			        url: "mapbox://crcorrell.6srdc0tq",	
+			        url: "mapbox://crcorrell.b3m564gf",	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
@@ -67,7 +67,7 @@ map.on("load", function() {
 				"id": "allProperties",
 				"type": "circle",
 				"source": "propertyData",
-				"source-layer": "output4-44k7am",
+				"source-layer": "output_ll-7qsgsb",
 				"paint": {
 					"circle-radius": defaultRadius,
 					"circle-color": defaultColors,
