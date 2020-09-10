@@ -8,7 +8,7 @@ var affiliatedWithColumn = "Affiliated With";
 var additionalDetailsColumn = "Additional Details";
 var ownedColumn = "Properties Held by Taxpayer Match Code";
 var unitColumn = "Unit Count from Department of Buildings";
-var relativeSizeColumn = "Relative Size";
+var relativeSizeColumn = unitColumn;//"Relative Size";
 
 
 // Access token 
@@ -20,7 +20,7 @@ var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/searchIndex.
 //var searchIndex ="https://funkonaut.github.io/find-my-landlord-atx/output3.json?raw=true"
 // Map tiles
 //var tiles = "https://funkonaut.github.io/find-my-landlord-atx/out.mbtiles";
-var tiles ="https://funkonaut.github.io/features/{z}/{x}/{y}.pbf"
+//var tiles ="https://funkonaut.github.io/features/{z}/{x}/{y}.pbf"
 //var tiles = "./features/{z}/{x}/{y}.pbf";
 
 // Colors
@@ -41,13 +41,13 @@ var highlightZoom = 14;
 // Change colors based on landlord size
 var defaultColors = [
 	"case",
-	[">=", ["get", relativeSizeColumn], 100],
+	[">=", ["get", ownedColumn], 100],
 	color4,
-	[">=", ["get", relativeSizeColumn], 10],
+	[">=", ["get", ownedColumn], 10],
 	color3,
-	[">=", ["get", relativeSizeColumn], 3],
+	[">=", ["get", ownedColumn], 3],
 	color2,
-	[">", ["get", relativeSizeColumn], 0],
+	[">", ["get", ownedColumn], 0],
 	color1,
 	white
 ];
