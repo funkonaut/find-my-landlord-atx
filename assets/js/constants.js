@@ -16,7 +16,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY3Jjb3JyZWxsIiwiYSI6ImNrZG1ranc4dDE5ODUycGxqe
 // Database reference
 var databaseCollectionName = "features";
 // JSON search
-var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/searchIndex.json?raw=true";//"https://find-my-landlord.nyc3.cdn.digitaloceanspaces.com/search-index.json";
+var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/search_index.json?raw=true";//"https://find-my-landlord.nyc3.cdn.digitaloceanspaces.com/search-index.json";
 //var searchIndex ="https://funkonaut.github.io/find-my-landlord-atx/output3.json?raw=true"
 // Map tiles
 //var tiles = "https://funkonaut.github.io/find-my-landlord-atx/out.mbtiles";
