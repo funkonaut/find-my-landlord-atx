@@ -12,16 +12,11 @@ var relativeSizeColumn = unitColumn;//"Relative Size";
 
 
 // Access token 
-mapboxgl.accessToken = 'pk.eyJ1IjoiY3Jjb3JyZWxsIiwiYSI6ImNrZG1ranc4dDE5ODUycGxqeGNnYTIzcGsifQ.scBxw_xzNgfp0Uc7rv56vQ';//'pk.eyJ1IjoiY3Jjb3JyZWxsIiwiYSI6ImNrZG1ranc4dDE5ODUycGxqeGNnYTIzcGsifQ.scBxw_xzNgfp0Uc7rv56vQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY3Jjb3JyZWxsIiwiYSI6ImNrZG1ranc4dDE5ODUycGxqeGNnYTIzcGsifQ.scBxw_xzNgfp0Uc7rv56vQ';
 // Database reference
 var databaseCollectionName = "features";
 // JSON search
-var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/search_index.json?raw=true";//"https://find-my-landlord.nyc3.cdn.digitaloceanspaces.com/search-index.json";
-//var searchIndex ="https://funkonaut.github.io/find-my-landlord-atx/output3.json?raw=true"
-// Map tiles
-//var tiles = "https://funkonaut.github.io/find-my-landlord-atx/out.mbtiles";
-//var tiles ="https://funkonaut.github.io/features/{z}/{x}/{y}.pbf"
-//var tiles = "./features/{z}/{x}/{y}.pbf";
+var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/data/search_index.json?raw=true";
 
 // Colors
 var dsaRed = "#ec1f27";
