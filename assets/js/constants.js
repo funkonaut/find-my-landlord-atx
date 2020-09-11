@@ -1,7 +1,7 @@
 // Column headers
 var propertyAddressColumn = "Property Address";
 var communityAreaColumn = "Community Area";
-var propertyIndexColumn = "Property Index Number";
+var propertyIndexColumn = "Property Index Number";  //has to be a string?:
 var taxpayerColumn = "Taxpayer";
 var taxpayerMatchCodeColumn = "Taxpayer Match Code";
 var affiliatedWithColumn = "Affiliated With";
