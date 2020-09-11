@@ -3,7 +3,8 @@ var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/mapbox/dark-v10', //hosted style id
   center: [-97.735,30.281], // starting position as [lng, lat]
-  zoom: 13 // starting zoom
+  zoom: 13, // starting zoom
+  attributionControl: false
 });
 
 // Create legend
@@ -28,7 +29,7 @@ legendUndetermined.innerHTML = "<span style='background-color: "+white+"'></span
 var attributionControl = new mapboxgl.AttributionControl({
 	customAttribution: "<a href='mailto:crcorrell@gmail.com'><b>Improve our data</b></a> | <a href='https://github.com/funkonaut/find-my-landlord-atx'>View this project on GitHub</a>"
 });
-//map.addControl(attributionControl);
+map.addControl(attributionControl);
 
 // Get map control
 var bottomRightClass = document.getElementsByClassName("mapboxgl-ctrl-bottom-right");
