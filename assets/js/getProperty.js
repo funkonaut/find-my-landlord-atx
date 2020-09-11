@@ -1,6 +1,6 @@
 function searchProperty(id) {
 	var feature;
-
+console.log(id);
 	return new Promise(function(resolve, reject) {
 		// Look up ID in database
 		var query = featuresRef
