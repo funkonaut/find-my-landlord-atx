@@ -28,7 +28,7 @@ legendUndetermined.innerHTML = "<span style='background-color: "+white+"'></span
 var attributionControl = new mapboxgl.AttributionControl({
 	customAttribution: "<a href='mailto:crcorrell@gmail.com'><b>Improve our data</b></a> | <a href='https://github.com/funkonaut/find-my-landlord-atx'>View this project on GitHub</a>"
 });
-map.addControl(attributionControl);
+//map.addControl(attributionControl);
 
 // Get map control
 var bottomRightClass = document.getElementsByClassName("mapboxgl-ctrl-bottom-right");
