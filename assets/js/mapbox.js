@@ -78,10 +78,11 @@ map.on("load", function() {
 				"type": "circle",
 				"source": "codeData",
 				"source-layer": "outputmap_code-06kj5a",   //change this from map_box
-				"paint": {
-					"circle-radius": defaultRadius,
+			        "visibility": "visible",
+                        	"paint": {
+					"circle-radius": defaultRadiusCC,
 					"circle-color": "rgb(255,255,255)",
-					"circle-opacity": defaultOpacity,
+					"circle-opacity": defaultOpacityCC,
 					"circle-stroke-width": 1,
 					"circle-stroke-color": "rgba(0, 0, 0, .25)",
 				}

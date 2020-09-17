@@ -31,6 +31,7 @@ var gray = "#808080";
 
 // Map defaults
 var defaultOpacity = .5;
+var defaultOpacityCC = .25;
 var highlightZoom = 14;
 
 // Change colors based on landlord size
@@ -68,6 +69,28 @@ var defaultRadius = [
 		["boolean", ["feature-state", "hover"], false],
 		["interpolate", ["linear"], ["get", relativeSizeColumn], 0, 200, 100, 400],
 		["interpolate", ["linear"], ["get", relativeSizeColumn], 0, 180, 100, 900]
+	]
+];
+var defaultRadiusCC = [
+	"interpolate",
+	["exponential", 1.75],
+	["zoom"],
+	8, 
+	["case",
+		["boolean", ["feature-state", "hover"], false],
+		["interpolate", ["linear"], ["get", "numbers"], 0, 10, 100, 20],
+		["interpolate", ["linear"], ["get", "numbers"], 0, 2, 100, 10]
+	],
+	16, 
+	["case",
+		["boolean", ["feature-state", "hover"], false],
+		["interpolate", ["linear"], ["get", 'numbers'], 0, 12, 100, 24],
+		["interpolate", ["linear"], ["get", 'numbers'], 0, 4, 100, 20]
+	],
+	22, ["case",
+		["boolean", ["feature-state", "hover"], false],
+		["interpolate", ["linear"], ["get", 'numbers'], 0, 200, 100, 400],
+		["interpolate", ["linear"], ["get", 'numbers'], 0, 180, 100, 900]
 	]
 ];
 
