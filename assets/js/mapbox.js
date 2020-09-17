@@ -56,6 +56,14 @@ map.on("load", function() {
 		if (this.status >= 200 && this.status < 400) {
 			json = JSON.parse(this.response);
 
+			// Set source data for Code complaints 
+			map.addSource("codeData", {
+				type: "vector",
+				maxzoom: 14, // Allows overzoom
+			        url: "mapbox://crcorrell.b2qvc1g4",//change this	
+                               //tiles: [tiles],
+				promoteId: propertyIndexColumn
+			});
 			// Set source data
 			map.addSource("propertyData", {
 				type: "vector",
@@ -63,6 +71,20 @@ map.on("load", function() {
 			        url: "mapbox://crcorrell.7hwbg9l1",//change this	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
+			});
+                        //Add code complaint layer
+			map.addLayer({
+				"id": "codeComplaints",
+				"type": "circle",
+				"source": "codeData",
+				"source-layer": "outputmap_code-06kj5a",   //change this from map_box
+				"paint": {
+					"circle-radius": defaultRadius,
+					"circle-color": "rgb(255,255,255)",
+					"circle-opacity": defaultOpacity,
+					"circle-stroke-width": 1,
+					"circle-stroke-color": "rgba(0, 0, 0, .25)",
+				}
 			});
 			map.addLayer({
 				"id": "allProperties",
