@@ -23,7 +23,7 @@ legend100plus.innerHTML = "<span style='background-color: "+color4+"'></span>100
 legend10plus.innerHTML = "<span style='background-color: "+color3+"'></span>10+ properties";
 legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ properties";
 legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 properties";
-legendUndetermined.innerHTML = "<span id="hideCC" style='background-color: "+white+"'></span>Code complaints";
+legendUndetermined.innerHTML = "<span onclick='hideCC()' style='background-color: "+white+"'></span>Code complaints";
 
 // Add attribution control
 var attributionControl = new mapboxgl.AttributionControl({
@@ -44,6 +44,25 @@ legendContainer.appendChild(legend3plus);
 legendContainer.appendChild(legendLess3);
 legendContainer.appendChild(legendUndetermined);
 
+// Add hide map button
+function hideCC() {
+                        //Add code complaint layer
+			map.addLayer({
+				"id": "codeComplaints",
+				"type": "circle",
+				"source": "codeData",
+				"source-layer": "outputmap_code-06kj5a",   //change this from map_box
+			        "visibility": "visible",
+                        	"paint": {
+					"circle-radius": defaultRadiusCC,
+					"circle-color": "rgb(255,255,255)",
+					"circle-opacity": defaultOpacityCC,
+					"circle-stroke-width": 1,
+					"circle-stroke-color": "rgba(0, 0, 0, .25)",
+				}
+			});
+   
+}
 // Add navigation
 var navigationControl = new mapboxgl.NavigationControl();
 map.addControl(navigationControl, "top-right");
@@ -71,21 +90,6 @@ map.on("load", function() {
 			        url: "mapbox://crcorrell.7hwbg9l1",//change this	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
-			});
-                        //Add code complaint layer
-			map.addLayer({
-				"id": "codeComplaints",
-				"type": "circle",
-				"source": "codeData",
-				"source-layer": "outputmap_code-06kj5a",   //change this from map_box
-			        "visibility": "visible",
-                        	"paint": {
-					"circle-radius": defaultRadiusCC,
-					"circle-color": "rgb(255,255,255)",
-					"circle-opacity": defaultOpacityCC,
-					"circle-stroke-width": 1,
-					"circle-stroke-color": "rgba(0, 0, 0, .25)",
-				}
 			});
 			map.addLayer({
 				"id": "allProperties",
