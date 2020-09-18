@@ -46,23 +46,20 @@ legendContainer.appendChild(legendUndetermined);
 
 // Add hide map button
 function hideCC() {
-                        //Add code complaint layer
-			map.addLayer({
-				"id": "codeComplaints",
-				"type": "circle",
-				"source": "codeData",
-				"source-layer": "outputmap_code-06kj5a",   //change this from map_box
-			        "visibility": "visible",
-                        	"paint": {
-					"circle-radius": defaultRadiusCC,
-					"circle-color": "rgb(255,255,255)",
-					"circle-opacity": defaultOpacityCC,
-					"circle-stroke-width": 1,
-					"circle-stroke-color": "rgba(0, 0, 0, .25)",
-				}
-			});
-   
+
+        var visibility = map.getLayoutProperty('codeComplaints', 'visibility');
+         
+        // toggle layer visibility by changing the layout object's visibility property
+        if (visibility === 'visible') {
+                map.setLayoutProperty('codeComplaints', 'visibility', 'none');
+                this.className = '';
+        } 
+        else {
+                this.className = 'active';
+                map.setLayoutProperty('codeComplaints', 'visibility', 'visible');
+        }
 }
+
 // Add navigation
 var navigationControl = new mapboxgl.NavigationControl();
 map.addControl(navigationControl, "top-right");
@@ -90,6 +87,21 @@ map.on("load", function() {
 			        url: "mapbox://crcorrell.7hwbg9l1",//change this	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
+			});
+                        //Add code complaint layer
+			map.addLayer({
+				"id": "codeComplaints",
+				"type": "circle",
+				"source": "codeData",
+				"source-layer": "outputmap_code-06kj5a",   //change this from map_box
+			        "visibility": "visible",
+                        	"paint": {
+					"circle-radius": defaultRadiusCC,
+					"circle-color": "rgb(255,255,255)",
+					"circle-opacity": defaultOpacityCC,
+					"circle-stroke-width": 1,
+					"circle-stroke-color": "rgba(0, 0, 0, .25)",
+				}
 			});
 			map.addLayer({
 				"id": "allProperties",
