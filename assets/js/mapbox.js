@@ -75,7 +75,7 @@ map.on("load", function() {
 			map.addSource("codeData", {
 				type: "vector",
 				maxzoom: 14, // Allows overzoom
-			        url: "mapbox://crcorrell.code_map"//change this	
+			        url: "mapbox://crcorrell.code_map",//change this	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
