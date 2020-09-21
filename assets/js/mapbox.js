@@ -18,7 +18,7 @@ var legendUndetermined = document.createElement("div");
 
 // Set content
 legendContainer.id = "legend";
-legendTitle.innerHTML = "Click to toggle code complaint layer";
+legendTitle.innerHTML = "Click code complaint to toggle layer";
 legend100plus.innerHTML = "<span style='background-color: "+color4+"'></span>100+ properties";
 legend10plus.innerHTML = "<span style='background-color: "+color3+"'></span>10+ properties";
 legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ properties";
