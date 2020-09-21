@@ -83,7 +83,7 @@ map.on("load", function() {
 			map.addSource("propertyData", {
 				type: "vector",
 				maxzoom: 14, // Allows overzoom
-			        url: "mapbox://crcorrell.a155tkus",         //crcorrell.7hwbg9l1",//change this	
+			        url: "mapbox://crcorrell.7hwbg9l1",//change this	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
@@ -93,7 +93,7 @@ map.on("load", function() {
 				"type": "circle",
 				"source": "codeData",
 				"source-layer": "original",   //change this from map_box
-			        "visibility": "visible",
+			        "visibility": "none",
                         	"paint": {
 					"circle-radius": defaultRadiusCC,
 					"circle-color": "rgb(255,255,255)",
@@ -106,7 +106,7 @@ map.on("load", function() {
 				"id": "allProperties",
 				"type": "circle",
 				"source": "propertyData",
-				"source-layer": "props_all_9_20",//"outputmap-dss2ey",   //change this from map_box
+				"source-layer": "outputmap-dss2ey",   //change this from map_box
 				"paint": {
 					"circle-radius": defaultRadius,
 					"circle-color": defaultColors,
