@@ -99,7 +99,7 @@ map.on("load", function() {
 					"circle-color": "rgb(255,255,255)",
 					"circle-opacity": defaultOpacityCC,
 					"circle-stroke-width": 1,
-					"circle-stroke-color": "rgba(0, 0, 0, .25)",
+					"circle-stroke-color": "rgba(0, 0, 0, .25)"
 				}
 			});
 			map.addLayer({
@@ -112,7 +112,7 @@ map.on("load", function() {
 					"circle-color": defaultColors,
 					"circle-opacity": defaultOpacity,
 					"circle-stroke-width": 1,
-					"circle-stroke-color": "rgba(0, 0, 0, .25)",
+					"circle-stroke-color": "rgba(0, 0, 0, .25)"
 				}
 			});
 
