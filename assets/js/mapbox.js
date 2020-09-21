@@ -46,7 +46,6 @@ legendContainer.appendChild(legendUndetermined);
 
 // Add hide map button
 function hideCC() {
-
         var visibility = map.getLayoutProperty('codeComplaints', 'visibility');
          
         // toggle layer visibility by changing the layout object's visibility property
@@ -76,7 +75,7 @@ map.on("load", function() {
 			map.addSource("codeData", {
 				type: "vector",
 				maxzoom: 14, // Allows overzoom
-			        url: "mapbox://crcorrell.b2qvc1g4",//change this	
+			        url: "mapbox://crcorrell.code_map"//change this	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
@@ -84,7 +83,7 @@ map.on("load", function() {
 			map.addSource("propertyData", {
 				type: "vector",
 				maxzoom: 14, // Allows overzoom
-			        url: "mapbox://crcorrell.7hwbg9l1",//change this	
+			        url: "mapbox://crcorrell.a155tkus",         //crcorrell.7hwbg9l1",//change this	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
@@ -93,7 +92,7 @@ map.on("load", function() {
 				"id": "codeComplaints",
 				"type": "circle",
 				"source": "codeData",
-				"source-layer": "outputmap_code-06kj5a",   //change this from map_box
+				"source-layer": "original",   //change this from map_box
 			        "visibility": "visible",
                         	"paint": {
 					"circle-radius": defaultRadiusCC,
@@ -107,7 +106,7 @@ map.on("load", function() {
 				"id": "allProperties",
 				"type": "circle",
 				"source": "propertyData",
-				"source-layer": "outputmap-dss2ey",   //change this from map_box
+				"source-layer": "props_all_9_20",//"outputmap-dss2ey",   //change this from map_box
 				"paint": {
 					"circle-radius": defaultRadius,
 					"circle-color": defaultColors,
