@@ -18,7 +18,7 @@ var legendUndetermined = document.createElement("div");
 
 // Set content
 legendContainer.id = "legend";
-legendTitle.innerHTML = "Click code complaint to toggle layer";
+legendTitle.innerHTML = "Click to toggle layer";
 legend100plus.innerHTML = "<span style='background-color: "+color4+"'></span>100+ properties";
 legend10plus.innerHTML = "<span style='background-color: "+color3+"'></span>10+ properties";
 legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ properties";
@@ -51,10 +51,10 @@ function hideCC() {
         // toggle layer visibility by changing the layout object's visibility property
         if (visibility === 'visible') {
                 map.setLayoutProperty('codeComplaints', 'visibility', 'none');
-                this.className = '';
+               // this.className = '';
         } 
         else {
-                this.className = 'active';
+              //  this.className = 'active';
                 map.setLayoutProperty('codeComplaints', 'visibility', 'visible');
         }
 }
@@ -102,7 +102,7 @@ map.on("load", function() {
 					"circle-stroke-color": "rgba(0, 0, 0, .25)"
 				}
 			});
-                        map.setLayoutProperty('codeComplaints', 'visibility', 'none');  // this should be neccessary...
+                        map.setLayoutProperty('codeComplaints', 'visibility', 'none');  // this should not be neccessary and is dirty...
 			map.addLayer({
 				"id": "allProperties",
 				"type": "circle",
