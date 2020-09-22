@@ -102,6 +102,7 @@ map.on("load", function() {
 					"circle-stroke-color": "rgba(0, 0, 0, .25)"
 				}
 			});
+                        map.setLayoutProperty('codeComplaints', 'visibility', 'none');  // this should be neccessary...
 			map.addLayer({
 				"id": "allProperties",
 				"type": "circle",
