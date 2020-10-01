@@ -19,10 +19,10 @@ var legendUndetermined = document.createElement("div");
 // Set content
 legendContainer.id = "legend";
 legendTitle.innerHTML = "Click to toggle layer";
-legend100plus.innerHTML = "<span style='background-color: "+color4+"'></span>100+ properties";
-legend10plus.innerHTML = "<span style='background-color: "+color3+"'></span>10+ properties";
-legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ properties";
-legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 properties";
+legend100plus.innerHTML = "<span style='background-color: "+color4+"'></span>100+ units";
+legend10plus.innerHTML = "<span style='background-color: "+color3+"'></span>10+ units";
+legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ units";
+legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 units";
 legendUndetermined.innerHTML = "<span onclick='hideCC()' style='background-color: "+white+"'></span>Code complaints";
 
 // Add attribution control
@@ -83,7 +83,7 @@ map.on("load", function() {
 			map.addSource("propertyData", {
 				type: "vector",
 				maxzoom: 14, // Allows overzoom
-			        url: "mapbox://crcorrell.7hwbg9l1",//change this	
+			        url: "mapbox://crcorrell.50h5qevk",                // crcorrell.7hwbg9l1",//change this	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
@@ -107,7 +107,7 @@ map.on("load", function() {
 				"id": "allProperties",
 				"type": "circle",
 				"source": "propertyData",
-				"source-layer": "outputmap-dss2ey",   //change this from map_box
+				"source-layer": "props_all_10_1-8amcho",//"outputmap-dss2ey",   //change this from map_box
 				"paint": {
 					"circle-radius": defaultRadius,
 					"circle-color": defaultColors,

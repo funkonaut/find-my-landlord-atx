@@ -14,9 +14,9 @@ var relativeSizeColumn = unitColumn;//"Relative Size";
 // Access token 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY3Jjb3JyZWxsIiwiYSI6ImNrZG1ranc4dDE5ODUycGxqeGNnYTIzcGsifQ.scBxw_xzNgfp0Uc7rv56vQ';
 // Database reference
-var databaseCollectionName = "features";
-// JSON search
-var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/data/search_index.json?raw=true";
+var databaseCollectionName = "features1"; //features
+// JSON search 
+var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/data/search_index_10_1.json?raw=true"; //search_index.json
 
 // Colors
 var dsaRed = "#ec1f27";
