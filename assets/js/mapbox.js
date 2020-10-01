@@ -19,11 +19,11 @@ var legendUndetermined = document.createElement("div");
 // Set content
 legendContainer.id = "legend";
 legendTitle.innerHTML = "Click to toggle layer";
-legend100plus.innerHTML = "<span style='background-color: "+color4+"'></span>100+ units";
-legend10plus.innerHTML = "<span style='background-color: "+color3+"'></span>10+ units";
-legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ units";
-legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 units";
-legendUndetermined.innerHTML = "<span onclick='hideLayer('codeComplaints')' style='background-color: "+white+"'></span>Code complaints";
+legend100plus.innerHTML = "<span onclick='hideLayer(\'prop100\')' style='background-color: "+color4+"'></span>100+ units";
+legend10plus.innerHTML = "<span onclick='hideLayer(\'prop10\')' style='background-color: "+color3+"'></span>10+ units";
+legend3plus.innerHTML = "<span onclick='hideLayer(\'prop3\')' style='background-color: "+color2+"'></span>3+ units";
+legendLess3.innerHTML = "<span onclick='hideLayer(\'prop1\')' style='background-color: "+color1+"'></span>1-2 units";
+legendUndetermined.innerHTML = "<span onclick='hideLayer("codeComplaints")' style='background-color: "+white+"'></span>Code complaints";
 
 // Add attribution control
 var attributionControl = new mapboxgl.AttributionControl({
@@ -79,11 +79,36 @@ map.on("load", function() {
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
-			// Set source data
+                        // all units url "mapbox://crcorrell.50h5qevk",
+			// Set source data 100+ units
 			map.addSource("propertyData", {
 				type: "vector",
 				maxzoom: 14, // Allows overzoom
-			        url: "mapbox://crcorrell.50h5qevk",                // crcorrell.7hwbg9l1",//change this	
+			        url: "mapbox://crcorrell.dud9bgpk",                // crcorrell.7hwbg9l1",//change this	
+                               //tiles: [tiles],
+				promoteId: propertyIndexColumn
+			});
+			// Set source data 10-99 units
+			map.addSource("prop10", {
+				type: "vector",
+				maxzoom: 14, // Allows overzoom
+			        url: "crcorrell.1pj338x6",                // crcorrell.7hwbg9l1",//change this	
+                               //tiles: [tiles],
+				promoteId: propertyIndexColumn
+			});
+			// Set source data 3-9 units
+			map.addSource("prop3", {
+				type: "vector",
+				maxzoom: 14, // Allows overzoom
+			        url: "crcorrell.3mrbn7cl",                // crcorrell.7hwbg9l1",//change this	
+                               //tiles: [tiles],
+				promoteId: propertyIndexColumn
+			});
+			// Set source data 1-2 units
+			map.addSource("prop1", {
+				type: "vector",
+				maxzoom: 14, // Allows overzoom
+			        url: "crcorrell.3mrbn7cl",                // crcorrell.7hwbg9l1",//change this	
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
