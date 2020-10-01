@@ -23,7 +23,7 @@ legend100plus.innerHTML = "<span style='background-color: "+color4+"'></span>100
 legend10plus.innerHTML = "<span style='background-color: "+color3+"'></span>10+ units";
 legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ units";
 legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 units";
-legendUndetermined.innerHTML = "<span onclick='hideCC()' style='background-color: "+white+"'></span>Code complaints";
+legendUndetermined.innerHTML = "<span onclick='hideLayer('codeComplaints')' style='background-color: "+white+"'></span>Code complaints";
 
 // Add attribution control
 var attributionControl = new mapboxgl.AttributionControl({
@@ -45,17 +45,17 @@ legendContainer.appendChild(legendLess3);
 legendContainer.appendChild(legendUndetermined);
 
 // Add hide map button
-function hideCC() {
-        var visibility = map.getLayoutProperty('codeComplaints', 'visibility');
+function hideLayer(layer) {
+        var visibility = map.getLayoutProperty(layer, 'visibility');
          
         // toggle layer visibility by changing the layout object's visibility property
         if (visibility === 'visible') {
-                map.setLayoutProperty('codeComplaints', 'visibility', 'none');
+                map.setLayoutProperty(layer, 'visibility', 'none');
                // this.className = '';
         } 
         else {
               //  this.className = 'active';
-                map.setLayoutProperty('codeComplaints', 'visibility', 'visible');
+                map.setLayoutProperty(layer, 'visibility', 'visible');
         }
 }
 
