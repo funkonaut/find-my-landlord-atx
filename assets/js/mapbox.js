@@ -30,7 +30,7 @@ legendUndetermined.innerHTML = "<span style='background-color: "+white+"'></span
 //legend10plus.addEventListener('click', hideLayer(10,100));
 //legend3plus.addEventListener('click', hideLayer(3,10));
 //legendLess3.addEventListener('click', hideLayer(1,3));
-legendUndetermined.addEventListener('click', hideCC('codeComplaint'));
+legendUndetermined.addEventListener('click', hideCC('codeComplaints'));
 
 // Add attribution control
 var attributionControl = new mapboxgl.AttributionControl({
@@ -70,8 +70,16 @@ function hideCC(layer) {
 //       var filtered = map.getLayoutProperty(layer, 'metadata');
 //       //non-filtered
 //       switch (filtered) {
-//       
-//       if (filtered == 'no-f') {
+//         case 'f-none':
+//           break;
+//         case 'f-1':
+//           break;
+//         case 'f-3':
+//           break;
+//         case 'f-10':
+//           break;
+//         case 'f-100': 
+//       if (filtered == 'f-none') {
 //       map.setFilter("allProperties", ["!=", taxpayerMatchCodeColumn, taxpayerMatchCode]);
 //       map.setLayoutProperty(layer, 'metadata', 'f-'+low);   
 //       }
@@ -156,7 +164,13 @@ map.on("load", function() {
 				"type": "circle",
 				"source": "propertyData",
 				"source-layer": "props_all_10_1-8amcho",//"outputmap-dss2ey",   //change this from map_box
-			        "metadata": "no-f",
+			        "metadata": {
+                                        "f-none": 1,
+                                        "f-1": 0,
+                                        "f-3": 0,
+                                        "f-10": 0,
+                                        "f-100": 0
+                                },
                         	"paint": {
 					"circle-radius": defaultRadius,
 					"circle-color": defaultColors,
