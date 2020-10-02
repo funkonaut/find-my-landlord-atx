@@ -26,10 +26,10 @@ legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 u
 legendUndetermined.innerHTML = "<span style='background-color: "+white+"'></span>Code complaints";
 
 // On click filter
-//legend100plus.addEventListener('click', hideLayer('100'));
-//legend10plus.addEventListener('click', hideLayer('10'));
-//legend3plus.addEventListener('click', hideLayer('3'));
-//legendLess3.addEventListener('click', hideLayer('1'));
+//legend100plus.addEventListener('click', hideLayer(100,100000)); //asume 100k max properties owned
+//legend10plus.addEventListener('click', hideLayer(10,100));
+//legend3plus.addEventListener('click', hideLayer(3,10));
+//legendLess3.addEventListener('click', hideLayer(1,3));
 legendUndetermined.addEventListener('click', hideCC('codeComplaint'));
 
 // Add attribution control
@@ -51,7 +51,6 @@ legendContainer.appendChild(legend3plus);
 legendContainer.appendChild(legendLess3);
 legendContainer.appendChild(legendUndetermined);
 
-//This is a trash way of doing this...
 // Add hide code complaint data button
 function hideCC(layer) {
         var visibility = map.getLayoutProperty(layer, 'visibility'); 
@@ -59,12 +58,29 @@ function hideCC(layer) {
         if (visibility === 'visible') {
                 map.setLayoutProperty(layer, 'visibility', 'none');
                // this.className = '';
-        }; 
+        } 
         else {
               //  this.className = 'active';
                 map.setLayoutProperty(layer, 'visibility', 'visible');
         };
 };
+
+//function hideLayer(low,hi) {
+//       var layer = 'allProperties'
+//       var filtered = map.getLayoutProperty(layer, 'metadata');
+//       //non-filtered
+//       switch (filtered) {
+//       
+//       if (filtered == 'no-f') {
+//       map.setFilter("allProperties", ["!=", taxpayerMatchCodeColumn, taxpayerMatchCode]);
+//       map.setLayoutProperty(layer, 'metadata', 'f-'+low);   
+//       }
+//       else if (filtered == 'no-f') {
+//       map.setFilter("allProperties", ["!=", taxpayerMatchCodeColumn, taxpayerMatchCode]);
+//       map.setLayoutProperty(layer, 'metadata', );    
+//       };
+//
+//};
 
 // Add navigation
 var navigationControl = new mapboxgl.NavigationControl();
@@ -140,7 +156,8 @@ map.on("load", function() {
 				"type": "circle",
 				"source": "propertyData",
 				"source-layer": "props_all_10_1-8amcho",//"outputmap-dss2ey",   //change this from map_box
-				"paint": {
+			        "metadata": "no-f",
+                        	"paint": {
 					"circle-radius": defaultRadius,
 					"circle-color": defaultColors,
 					"circle-opacity": defaultOpacity,
