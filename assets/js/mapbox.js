@@ -25,7 +25,12 @@ legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ un
 legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 units";
 legendUndetermined.innerHTML = "<span style='background-color: "+white+"'></span>Code complaints";
 
-legendUndeterminded.addEventListener('click', hideLayer('codeComplaint'));
+// On click filter
+//legend100plus.addEventListener('click', hideLayer('100'));
+//legend10plus.addEventListener('click', hideLayer('10'));
+//legend3plus.addEventListener('click', hideLayer('3'));
+//legendLess3.addEventListener('click', hideLayer('1'));
+legendUndetermined.addEventListener('click', hideCC('codeComplaint'));
 
 // Add attribution control
 var attributionControl = new mapboxgl.AttributionControl({
@@ -47,21 +52,19 @@ legendContainer.appendChild(legendLess3);
 legendContainer.appendChild(legendUndetermined);
 
 //This is a trash way of doing this...
-
-// Add hide map button
-function hideLayer(layer) {
-        var visibility = map.getLayoutProperty(layer, 'visibility');
-         
+// Add hide code complaint data button
+function hideCC(layer) {
+        var visibility = map.getLayoutProperty(layer, 'visibility'); 
         // toggle layer visibility by changing the layout object's visibility property
         if (visibility === 'visible') {
                 map.setLayoutProperty(layer, 'visibility', 'none');
                // this.className = '';
-        } 
+        }; 
         else {
               //  this.className = 'active';
                 map.setLayoutProperty(layer, 'visibility', 'visible');
-        }
-}
+        };
+};
 
 // Add navigation
 var navigationControl = new mapboxgl.NavigationControl();
