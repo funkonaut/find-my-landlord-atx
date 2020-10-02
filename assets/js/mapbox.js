@@ -53,7 +53,7 @@ legendContainer.appendChild(legendUndetermined);
 
 // Add hide code complaint data button
 function hideCC() {
-        var layer = 'codeComplaints'
+        var layer = 'codeComplaints';
         var visibility = map.getLayoutProperty(layer, 'visibility'); 
         // toggle layer visibility by changing the layout object's visibility property
         if (visibility === 'visible') {
@@ -67,7 +67,7 @@ function hideCC() {
 };
 
 //function hideLayer(low,hi) {
-//       var layer = 'allProperties'
+//       var layer = 'allProperties';
 //       var filtered = map.getLayoutProperty(layer, 'metadata');
 //       //non-filtered
 //       switch (filtered) {
