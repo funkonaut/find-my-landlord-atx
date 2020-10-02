@@ -30,7 +30,7 @@ legendUndetermined.innerHTML = "<span style='background-color: "+white+"'></span
 //legend10plus.addEventListener('click', hideLayer(10,100));
 //legend3plus.addEventListener('click', hideLayer(3,10));
 //legendLess3.addEventListener('click', hideLayer(1,3));
-legendUndetermined.addEventListener('click', hideCC('codeComplaints'));
+legendUndetermined.addEventListener('click', hideCC);
 
 // Add attribution control
 var attributionControl = new mapboxgl.AttributionControl({
@@ -52,7 +52,8 @@ legendContainer.appendChild(legendLess3);
 legendContainer.appendChild(legendUndetermined);
 
 // Add hide code complaint data button
-function hideCC(layer) {
+function hideCC() {
+        var layer = 'codeComplaints'
         var visibility = map.getLayoutProperty(layer, 'visibility'); 
         // toggle layer visibility by changing the layout object's visibility property
         if (visibility === 'visible') {
