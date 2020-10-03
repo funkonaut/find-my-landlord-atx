@@ -72,7 +72,7 @@ function hideLayer(low, high) {
                      [">=", ownedColumn, high],
                      ["<", ownedColumn, low]
                 ],
-                map.getFilter("allProperties");
+                map.getFilter("allProperties")
                 ]);      
                 map.getLayer("allProperties").metadata['mapbox:filter-'+low] = 'True'; }
         else {
@@ -84,7 +84,7 @@ function hideLayer(low, high) {
                 ["any",     
                      [">=", ownedColumn, high],
                      ["<", ownedColumn, low]]],
-                map.getFilter("allProperties");
+                map.getFilter("allProperties")
                 ]);
         };
 };
