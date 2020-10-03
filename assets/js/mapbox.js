@@ -26,12 +26,18 @@ legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 u
 legendUndetermined.innerHTML = "<span style='background-color: "+white+"'></span>Code complaints";
 
 // On click filter
-//legend100plus.addEventListener('click', hideLayer(100,100000)); //asume 100k max properties owned
-//legend10plus.addEventListener('click', hideLayer(10,100));
-//legend3plus.addEventListener('click', hideLayer(3,10));
-legendLess3.addEventListener('click',function() {
-        hideLayer(1,3);
+legend10plus.addEventListener('click', function() {
+        hideLayer(99);
 }, false);
+
+legend3plus.addEventListener('click', function() {
+        hideLayer(9);
+}, false);
+
+legendLess3.addEventListener('click', function() {
+        hideLayer(2);
+}, false);
+
 legendUndetermined.addEventListener('click', hideCC);
 
 // Add attribution control
@@ -54,9 +60,8 @@ legendContainer.appendChild(legendLess3);
 legendContainer.appendChild(legendUndetermined);
 
 //There is definitely a cleaner way to do this...
-function hideLayer(low,high) {
-        map.setFilter("allProperties",["<=", low, ownedColumn]);
-        map.setFilter("allProperties",["<=", ownedColumn, high]);
+function hideLayer(high) {
+        map.setFilter("allProperties",["<=", high, ownedColumn]);
         //this.visibile = 'True'
 };
 // Add hide code complaint data button
