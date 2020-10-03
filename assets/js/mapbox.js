@@ -61,7 +61,7 @@ legendContainer.appendChild(legendUndetermined);
 
 //There is definitely a cleaner way to do this...
 function hideLayer(high) {
-        map.setFilter("allProperties",["<=", high, ownedColumn]);
+        map.setFilter("allProperties",[">=", ownedColumn, high]);
         //this.visibile = 'True'
 };
 // Add hide code complaint data button
@@ -153,6 +153,9 @@ map.on("load", function() {
 				"type": "circle",
 				"source": "propertyData",
 				"source-layer": "props_all_10_1-8amcho",//"outputmap-dss2ey",   //change this from map_box
+                                "metadata": {
+                                 "mapbox:filter": "False"
+                                },
                         	"paint": {
 					"circle-radius": defaultRadius,
 					"circle-color": defaultColors,
