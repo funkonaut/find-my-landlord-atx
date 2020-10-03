@@ -93,7 +93,7 @@ function renderSelectedMap(feature) {
 	// Show container
 	searchResultsContainer.style.display = "block";
 	// Hide all properties with same owner
-	map.setFilter("allProperties", ["!=", taxpayerMatchCodeColumn, taxpayerMatchCode]);
+	map.setFilter("allProperties",["all",["!=", taxpayerMatchCodeColumn, taxpayerMatchCode],map.getFilter("allProperties")]);
 	map.setPaintProperty("allProperties", "circle-opacity", .15);
 
 	if (owned) {
@@ -107,7 +107,7 @@ function renderSelectedMap(feature) {
 				// Show properties on map
 				addLayer("relatedProperties", properties, defaultRadius, dsaYellow, .75);
 				// And hide current property
-				map.setFilter("relatedProperties", ["!=", propertyIndexColumn, propertyIndex]);
+				map.setFilter("relatedProperties", ["all",["!=", propertyIndexColumn, propertyIndex],map.getFilter("allProperties")]);
 
 				if (properties.features.length > 1) {
 					// Show all features on map

@@ -67,17 +67,25 @@ function hideLayer(low, high) {
        //maybe iterate thru metadata and build bounds based on that look into case filter?
        if (map.getLayer("allProperties").metadata['mapbox:filter-'+low] == 'False') {
                 map.setFilter("allProperties",[
-                "all",     
-                [">=", ownedColumn, high],
-                ["<", ownedColumm, low]//,
-       //map.getFilter("allProperties");
+                "all",
+                ["any",     
+                     [">=", ownedColumn, high],
+                     ["<", ownedColumn, low]
+                ],
+                map.getFilter("allProperties");
                 ]);      
-//        map.setFilter("allProperties",[">=", ownedColumn, high]);
                 map.getLayer("allProperties").metadata['mapbox:filter-'+low] = 'True'; }
         else {
                //turn off filter 
                 map.getLayer("allProperties").metadata['mapbox:filter-'+low] = 'False';     
-                map.setFilter('myLayer', null);
+        map.setFilter("allProperties",[
+                "all",
+                ["none",
+                ["any",     
+                     [">=", ownedColumn, high],
+                     ["<", ownedColumn, low]]],
+                map.getFilter("allProperties");
+                ]);
         };
 };
 
