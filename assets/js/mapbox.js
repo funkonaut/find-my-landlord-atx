@@ -69,7 +69,8 @@ function hideLayer(low, high) {
                 map.setFilter("allProperties",[
                 "all",     
                 [">=", ownedColumn, high],
-                ["<", ownedColumm, low]
+                ["<", ownedColumm, low]//,
+       //map.getFilter("allProperties");
                 ]);      
 //        map.setFilter("allProperties",[">=", ownedColumn, high]);
                 map.getLayer("allProperties").metadata['mapbox:filter-'+low] = 'True'; }
@@ -170,9 +171,9 @@ map.on("load", function() {
 				"source": "propertyData",
 				"source-layer": "props_all_10_1-8amcho",//"outputmap-dss2ey",   //change this from map_box
                                 "metadata": {
-                                 "mapbox:filter-1": "False"
-                                 "mapbox:filter-3": "False"
-                                 "mapbox:filter-10": "False"
+                                 "mapbox:filter-1": "False",
+                                 "mapbox:filter-3": "False",
+                                 "mapbox:filter-10": "False",
                                  "mapbox:filter-100": "False"
                                 },
                         	"paint": {
