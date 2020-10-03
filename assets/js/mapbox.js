@@ -26,16 +26,20 @@ legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 u
 legendUndetermined.innerHTML = "<span style='background-color: "+white+"'></span>Code complaints";
 
 // On click filter
+legend100plus.addEventListener('click', function() {
+        hideLayer(100,999999);
+}, false);
+
 legend10plus.addEventListener('click', function() {
-        hideLayer(99);
+        hideLayer(10,99);
 }, false);
 
 legend3plus.addEventListener('click', function() {
-        hideLayer(9);
+        hideLayer(3,9);
 }, false);
 
 legendLess3.addEventListener('click', function() {
-        hideLayer(2);
+        hideLayer(1,2);
 }, false);
 
 legendUndetermined.addEventListener('click', hideCC);
@@ -59,11 +63,23 @@ legendContainer.appendChild(legend3plus);
 legendContainer.appendChild(legendLess3);
 legendContainer.appendChild(legendUndetermined);
 
-//There is definitely a cleaner way to do this...
-function hideLayer(high) {
-        map.setFilter("allProperties",[">=", ownedColumn, high]);
-        //this.visibile = 'True'
+function hideLayer(low, high) {
+       //maybe iterate thru metadata and build bounds based on that look into case filter?
+       if (map.getLayer("allProperties").metadata['mapbox:filter-'+low] == 'False') {
+                map.setFilter("allProperties",[
+                "all",     
+                [">=", ownedColumn, high],
+                ["<", ownedColumm, low]
+                ]);      
+//        map.setFilter("allProperties",[">=", ownedColumn, high]);
+                map.getLayer("allProperties").metadata['mapbox:filter-'+low] = 'True'; }
+        else {
+               //turn off filter 
+                map.getLayer("allProperties").metadata['mapbox:filter-'+low] = 'False';     
+                map.setFilter('myLayer', null);
+        };
 };
+
 // Add hide code complaint data button
 function hideCC() {
         var layer = 'codeComplaints';
@@ -154,7 +170,10 @@ map.on("load", function() {
 				"source": "propertyData",
 				"source-layer": "props_all_10_1-8amcho",//"outputmap-dss2ey",   //change this from map_box
                                 "metadata": {
-                                 "mapbox:filter": "False"
+                                 "mapbox:filter-1": "False"
+                                 "mapbox:filter-3": "False"
+                                 "mapbox:filter-10": "False"
+                                 "mapbox:filter-100": "False"
                                 },
                         	"paint": {
 					"circle-radius": defaultRadius,
