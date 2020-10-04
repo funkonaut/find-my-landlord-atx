@@ -63,30 +63,31 @@ legendContainer.appendChild(legend3plus);
 legendContainer.appendChild(legendLess3);
 legendContainer.appendChild(legendUndetermined);
 
+// Probably a cleaner way to do this without globals possibly store in meta data?...
+var f1 = ["all"];
+var f3 = ["all"];
+var f10 = ["all"];
+var f100 = ["all"];
 function hideLayer(low, high) {
-       //maybe iterate thru metadata and build bounds based on that look into case filter?
-       if (map.getLayer("allProperties").metadata['mapbox:filter-'+low] == 'False') {
-                map.setFilter("allProperties",[
-                "all",
-                ["any",     
-                     [">=", ownedColumn, high],
-                     ["<", ownedColumn, low]
-                ],
-                map.getFilter("allProperties")
-                ]);      
-                map.getLayer("allProperties").metadata['mapbox:filter-'+low] = 'True'; }
-        else {
-               //turn off filter 
-                map.getLayer("allProperties").metadata['mapbox:filter-'+low] = 'False';     
-        map.setFilter("allProperties",[
-                "all",
-                ["none",
-                ["any",     
-                     [">=", ownedColumn, high],
-                     ["<", ownedColumn, low]]],
-                map.getFilter("allProperties")
-                ]);
-        };
+      // Nothing currently filtered
+    //  if (typeof(filterPast) == "undefined"){
+    //            map.setFilter("allProperties",filterNew); 
+    //            map.getLayer("allProperties").metadata['mapbox:filter-'+low] = "True";
+    //  }
+    //  // Something is being filtered
+    //  else { 
+                //New filter on click
+                if (filterNum == "False") {
+                     eval("f"+low+" = " + "[\"any\",[\">\", ownedColumn, high],[\"<\", ownedColumn, low]];");
+                     map.getLayer("allProperties").metadata['mapbox:filter-'+low] = "True";    
+                }
+                // Get rid of current filter on 
+                else {
+                     eval("f"+low+" = " + "[\"all\"];");
+                     map.getLayer("allProperties").metadata['mapbox:filter-'+low] = "False";    
+                };
+    //  };
+      map.setFilter("allProperties",["all",f1,f3,f10,f100]);
 };
 
 // Add hide code complaint data button

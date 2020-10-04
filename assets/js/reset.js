@@ -20,7 +20,7 @@ function resetSearchResults() {
 
 function resetMap() {		
 	// Restore default layer
-	map.setFilter("allProperties", null);
+	map.setFilter("allProperties", ["all",f1,f3,f10,f100]);
 	map.setPaintProperty("allProperties", "circle-opacity", defaultOpacity);
 
 	// Remove related layer
