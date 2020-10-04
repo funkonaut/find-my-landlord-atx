@@ -77,6 +77,7 @@ function hideLayer(low, high) {
     //  // Something is being filtered
     //  else { 
                 //New filter on click
+                var filterNum = map.getLayer("allProperties").metadata['mapbox:filter-'+low];
                 if (filterNum == "False") {
                      eval("f"+low+" = " + "[\"any\",[\">\", ownedColumn, high],[\"<\", ownedColumn, low]];");
                      map.getLayer("allProperties").metadata['mapbox:filter-'+low] = "True";    
