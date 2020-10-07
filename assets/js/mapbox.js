@@ -69,26 +69,18 @@ var f3 = ["all"];
 var f10 = ["all"];
 var f100 = ["all"];
 function hideLayer(low, high) {
-      // Nothing currently filtered
-    //  if (typeof(filterPast) == "undefined"){
-    //            map.setFilter("allProperties",filterNew); 
-    //            map.getLayer("allProperties").metadata['mapbox:filter-'+low] = "True";
-    //  }
-    //  // Something is being filtered
-    //  else { 
-                //New filter on click
-                var filterNum = map.getLayer("allProperties").metadata['mapbox:filter-'+low];
-                if (filterNum == "False") {
-                     eval("f"+low+" = " + "[\"any\",[\">\", ownedColumn, high],[\"<\", ownedColumn, low]];");
-                     map.getLayer("allProperties").metadata['mapbox:filter-'+low] = "True";    
-                }
-                // Get rid of current filter on 
-                else {
-                     eval("f"+low+" = " + "[\"all\"];");
-                     map.getLayer("allProperties").metadata['mapbox:filter-'+low] = "False";    
-                };
-    //  };
-      map.setFilter("allProperties",["all",f1,f3,f10,f100]);
+        //New filter on click 
+        var filterNum = map.getLayer("allProperties").metadata['mapbox:filter-'+low];
+        if (filterNum == "False") {
+             eval("f"+low+" = " + "[\"any\",[\">\", ownedColumn, high],[\"<\", ownedColumn, low]];");
+             map.getLayer("allProperties").metadata['mapbox:filter-'+low] = "True";    
+        }
+        // Get rid of current filter on 
+        else {
+             eval("f"+low+" = " + "[\"all\"];");
+             map.getLayer("allProperties").metadata['mapbox:filter-'+low] = "False";    
+        };
+        map.setFilter("allProperties",["all",f1,f3,f10,f100]);
 };
 
 // Add hide code complaint data button
@@ -135,31 +127,7 @@ map.on("load", function() {
                                //tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
-			// Set source data 10-99 units
-//			map.addSource("prop10", {
-//				type: "vector",
-//				maxzoom: 14, // Allows overzoom
-//			        url: "crcorrell.1pj338x6",                // crcorrell.7hwbg9l1",//change this	
-//                               //tiles: [tiles],
-//				promoteId: propertyIndexColumn
-//			});
-//			// Set source data 3-9 units
-//			map.addSource("prop3", {
-//				type: "vector",
-//				maxzoom: 14, // Allows overzoom
-//			        url: "crcorrell.3mrbn7cl",                // crcorrell.7hwbg9l1",//change this	
-//                               //tiles: [tiles],
-//				promoteId: propertyIndexColumn
-//			});
-//			// Set source data 1-2 units
-//			map.addSource("prop1", {
-//				type: "vector",
-//				maxzoom: 14, // Allows overzoom
-//			        url: "crcorrell.3mrbn7cl",                // crcorrell.7hwbg9l1",//change this	
-//                               //tiles: [tiles],
-//				promoteId: propertyIndexColumn
-//			});
-//                        //Add code complaint layer
+                        //Add code complaint layer
 			map.addLayer({
 				"id": "codeComplaints",
 				"type": "circle",
