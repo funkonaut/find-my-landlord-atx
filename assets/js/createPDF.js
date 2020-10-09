@@ -11,7 +11,7 @@ function createPDF(title, list) {
 	// Set column titles
 	var col = [
 		"Property address",
-		"Value",
+		"Appraisal Value",
 		"Known units",
 		"Possible Affiliations",
 		"Estimated units owned",
