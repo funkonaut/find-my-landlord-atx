@@ -11,7 +11,7 @@ function createPDF(title, list) {
 	// Set column titles
 	var col = [
 		"Property address",
-		"Community area",
+		"Value",
 		"Known units",
 		"Possible Affiliations",
 		"Estimated units owned",
@@ -43,7 +43,7 @@ function createPDF(title, list) {
 			// Set row values
 	        var temp = [
 				list.features[i].properties[propertyAddressColumn],
-				list.features[i].properties[communityAreaColumn],
+				list.features[i].properties[valueColumn],
 				knownUnits,
 				affiliatedWith,
 				list.features[i].properties[ownedColumn],

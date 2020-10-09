@@ -46,7 +46,7 @@ legendUndetermined.addEventListener('click', hideCC);
 
 // Add attribution control
 var attributionControl = new mapboxgl.AttributionControl({
-	customAttribution: "<a href='mailto:crcorrell@gmail.com'><b>Improve our data</b></a> | <a href='https://github.com/funkonaut/find-my-landlord-atx'>View this project on GitHub</a>"
+	customAttribution: "<a href='https://github.com/funkonaut/find-my-landlord-atx/issues/new/choose'><b>Improve our data</b></a> | <a href='https://github.com/funkonaut/find-my-landlord-atx'>View this project on GitHub</a>"
 });
 map.addControl(attributionControl);
 

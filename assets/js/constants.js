@@ -1,22 +1,23 @@
 // Column headers
 var propertyAddressColumn = "Property Address";
 var communityAreaColumn = "Community Area";
-var propertyIndexColumn = "Property Index Number";  //has to be a string?:
+var propertyIndexColumn = "Property Index Number";  
 var taxpayerColumn = "Taxpayer";
 var taxpayerMatchCodeColumn = "Taxpayer Match Code";
 var affiliatedWithColumn = "Affiliated With";
 var additionalDetailsColumn = "Additional Details";
 var ownedColumn = "Properties Held by Taxpayer Match Code";
 var unitColumn = "Unit Count from Department of Buildings";
-var relativeSizeColumn = unitColumn;//"Relative Size";
+var valueColumn = "Appraisal Value";
+var relativeSizeColumn = unitColumn;
 
 
 // Access token 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY3Jjb3JyZWxsIiwiYSI6ImNrZG1ranc4dDE5ODUycGxqeGNnYTIzcGsifQ.scBxw_xzNgfp0Uc7rv56vQ';
 // Database reference
-var databaseCollectionName = "features1"; //features
+var databaseCollectionName = "features1"; 
 // JSON search 
-var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/data/search_index_10_1.json?raw=true"; //search_index.json
+var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/data/search_index_10_1.json?raw=true"; 
 
 // Colors
 var dsaRed = "#ec1f27";
