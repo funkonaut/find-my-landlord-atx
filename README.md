@@ -13,3 +13,5 @@ Check it out [here](https://funkonaut.github.io/find-my-landlord-atx).
 
 ## Credits
 [Mapbox](https://www.mapbox.com/) powers the map's tileset and hosts the map, [Google Cloud Firestore](https://firebase.google.com/docs/firestore) hosts our database, and [jsPDF](https://github.com/MrRio/jsPDF) generates PDFs.
+
+This code and data is distributed without warranty of any kind, implied, expressed or statutory. The owner of this github makes no claims, promises or guarantees about the accuracy, completeness, or adequacy of this information and expressly disclaims liability for any errors and omissions.
