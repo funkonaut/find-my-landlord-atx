@@ -284,7 +284,7 @@ function renderSelectedInfo(feature) {
 
 	// Data info
 	var dataInfoLink = document.getElementById("data-info-link");
-	attachModal(dataInfoLink, "How was this data collected?", dataInfoContent);
+	attachModal(dataInfoLink, "See an issues with our data?", dataInfoContent);
 
 	// Additional details
 	var additionalDetailsLink = document.getElementById("additional-details-link");

@@ -13,8 +13,8 @@ function createPDF(title, list) {
 		"Property address",
 		"Community area",
 		"Known units",
-		"Affiliated with",
-		"Properties owned",
+		"Possible Affiliations",
+		"Estimated units owned",
 		"Property taxpayer"
 	];
 
