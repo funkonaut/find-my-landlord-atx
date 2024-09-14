@@ -17,7 +17,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY3Jjb3JyZWxsIiwiYSI6ImNrZG1ranc4dDE5ODUycGxqe
 // Database reference
 var databaseCollectionName = "features1"; 
 // JSON search 
-var searchIndex = "https://funkonaut.github.io/find-my-landlord-atx/data/search_index_10_1.json?raw=true"; 
+var searchIndex = "https://www.accessiblestem.org/find-my-landlord-atx/data/search_index_10_1.json?raw=true"; 
 
 // Colors
 var dsaRed = "#ec1f27";
